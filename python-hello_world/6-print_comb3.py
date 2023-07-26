@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-for i in range(0,10):
-    for j in range(0,10):
-        if (i != j) or (i):
-            print("{}{}, ".format(i,j), end="")
+for first_digit in range(0, 9):
+    for second_digit in range(first_digit + 1, 10):
+        print(f"{first_digit:0d}{second_digit:0d}", end=", ")
+print("89")  # Manually add 89 to the end, as it's the last combination
+
 
 
