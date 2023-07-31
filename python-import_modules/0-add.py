@@ -1,11 +1,4 @@
-def add(a, b):
-    """My addition function
+#!/usr/bin/python3
 
-    Args:
-        a: first integer
-        b: second integer
-
-    Returns:
-        The return value. a + b
-    """
-    return (a + b)
+from add_0 import sum
+print(sum(1,2))
