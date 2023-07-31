@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 
-
-from add_0 import sub
+from add_0 import sum
 
 if __name__== "__main__":
 
     a = 1
     b = 2
 
-    result = sub(a,b)
+    result = sum(a,b)
     print("{}+{}={}".format(a,b,result))
-
+    
