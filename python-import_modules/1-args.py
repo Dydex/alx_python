@@ -8,14 +8,14 @@ def main():
         print("0 arguments.")
     elif num_args == 1:
         print("1 argument:")
+        
+        for i, arg in enumerate(argv, start=1):
+                print(f"{i}: {arg}")
     else:
         print(f"{num_args} arguments:")
-    
-    if num_args == 0:
-        print("0 arguments.")
-    else:
+
         for i, arg in enumerate(argv, start=1):
-            print(f"{i}: {arg}")
+                print(f"{i}: {arg}")
 
 if __name__ == "__main__":
     main()
