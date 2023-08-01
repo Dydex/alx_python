@@ -7,6 +7,6 @@ def print_matrix_integer(matrix=[[]]):
     for row in matrix:
         for col_index, value in enumerate(row):
             # Print the integer value with tab separation using str.format()
-            print("{:d}".format(value), end="\t")
-
+            print("{:d}".format(value), end=" ")
             print()
+
