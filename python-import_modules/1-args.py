@@ -11,6 +11,7 @@ def main():
         
         for i, arg in enumerate(argv, start=1):
                 print(f"{i}: {arg}")
+                
     else:
         print(f"{num_args} arguments:")
 
