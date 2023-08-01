@@ -1,2 +1,4 @@
 def raise_exception_msg(message=""):
-    print("Python is cool", "C is fun")
+    print("Python is cool")
+    print("C is fun")
+    print("")
