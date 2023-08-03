@@ -1,3 +1,6 @@
 def common_elements(set_1, set_2):
-    common_elements_set = set_1.intersect(set_2)
-    return common_elements_set
+    if (set_1 & set_2):
+        print(set_1 & set_2)
+    else:
+        print ("n common elemnts")
+
