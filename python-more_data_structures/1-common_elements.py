@@ -4,4 +4,3 @@ def common_elements(set_1, set_2):
         print(list(common_elements_set))
     else:
         print ("no common elemnts")
-
