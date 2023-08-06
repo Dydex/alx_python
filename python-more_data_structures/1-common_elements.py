@@ -1,8 +1,9 @@
-def common_elements(set_1, set_2):
-    common_elements_set = set_1 & set_2
+def common_elements(a, b):
+    set_1 = set (a) 
+    set_2 = set (b)
     
-    if (common_elements_set):
-        print(list(common_elements_set))
+    if (set_1 & set_2):
+        print(set_1 & set_2)
     else:
         print ("no common elemnts")
-    return common_elements_set
+    
