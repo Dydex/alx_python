@@ -4,7 +4,7 @@ def common_elements(a, b):
     c_set = set_1 & set_2
     empty_list = []
     
-    if (c_set):
+    if c_set is not None:
         print(sorted(list(c_set)))
     else:
         print (empty_list)
