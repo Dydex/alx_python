@@ -5,5 +5,5 @@ def common_elements(a, b):
     if (set_1 & set_2):
         print(list(set_1 & set_2))
     else:
-        print ("no common elemnts")
+        print ()
     
