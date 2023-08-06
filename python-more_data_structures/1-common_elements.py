@@ -4,8 +4,8 @@ def common_elements(a, b):
     c_set = set_1 & set_2
     empty_list = []
     
-    if (set_1 & set_2):
-        print(sorted(list(set_1 & set_2)))
+    if (c_set):
+        print(sorted(list(c_set)))
     else:
         print (empty_list)
     
