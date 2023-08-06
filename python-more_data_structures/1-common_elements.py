@@ -5,7 +5,7 @@ def common_elements(a, b):
     empty_list = []
     
     if (c_set):
-        print(sorted(list(set_1.intersection(set_2))))
+        return(sorted(list(set_1.intersection(set_2))))
     else:
-        print (empty_list)
+        return(empty_list)
     
