@@ -2,12 +2,14 @@ def best_score(a_dictionary):
     if not  a_dictionary:
         return None
     
-    best_key = value
-    best_key = best_score
-    best_score = int
+    best_key = None
+    best_score = int('-inf')
 
-    for key, value in a_dictionary:
+    for key, value in a_dictionary.items():
         if value > best_score:
-            return best_key
+            best_score = value
+            best_key = key
+           
+    return best_key
 
     
