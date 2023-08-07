@@ -3,12 +3,12 @@ def best_score(a_dictionary):
         return None
     
     best_key = None
-    best_score = int('-inf')
+    best_score = int
 
     for key, value in a_dictionary.items():
         if value > best_score:
             best_score = value
             best_key = key
-    return best_key
+    return best_score
 
     
