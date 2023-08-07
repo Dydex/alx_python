@@ -2,13 +2,15 @@ def best_score(a_dictionary):
     if not  a_dictionary:
         return None
     
-    key = best_key
+    max_score = None
+    best_student = None
+    
+    for student, score in a_dictionary.items():
+        if max_score is None or score > max_score:
+            max_score = score
+            best_student = student
 
-
-    for key, value in a_dictionary.items():
-        if value > best_score:
-            best_score = value
-            best_key = key
-    return best_score
+    return best_student
+    
 
     
