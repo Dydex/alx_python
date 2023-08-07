@@ -3,6 +3,7 @@ def best_score(a_dictionary):
         return None
     
     best_key = None
+    value = best_score
     best_score = int
 
     for key, value in a_dictionary:
