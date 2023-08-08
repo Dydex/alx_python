@@ -8,7 +8,8 @@ class Sqaure:
     size = str.
     size of the square.
     """ 
-    pass
-
-    """  atrrtibutes """
-    __size = 0
+    
+    def __init__(self, size):
+        self.__size = size
+    """Initializes the size.
+    """
