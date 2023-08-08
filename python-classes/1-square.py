@@ -1,15 +1,13 @@
-""" This is a square(object) module.  """
+""" Class module"""
 
-class Sqaure:
-    """ 
-    A class representing a Square.
-    # class Square
-    Attributes:
-    __size = size of the square.
-    """ 
+class Square:
+    """A class representing a Square."""
     
     def __init__(self, size):
-        """ Initializes the size.
+        """Initializes the size.
+        
+        Args:
+            size (int): The size of the square.
         """
         if size is not int:
             raise TypeError ("size must be an integer")
