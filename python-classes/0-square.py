@@ -3,7 +3,7 @@
 class Sqaure:
     """ 
     A class representing a Square.
-    
+    # class Square
     Attributes:
     __size = size of the square.
     """ 
