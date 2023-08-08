@@ -6,8 +6,8 @@ class Sqaure:
     ----
     __size = str
         size of the square
-        
-       """ 
+
+    """ 
     pass
 
     """  atrrtibutes """
