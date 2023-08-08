@@ -1,14 +1,14 @@
-""" This is a square(object) module.  """
-
-class Sqaure:
-    """ 
-    A class representing a Square.
-    # class Square
+class Square:
+    """A class representing a Square.
+    
     Attributes:
-    __size = size of the square.
-    """ 
+        size (int): Size of the square.
+    """
     
     def __init__(self, size):
-        """ Initializes the size.
+        """Initializes the size.
+        
+        Args:
+            size (int): The size of the square.
         """
         self.__size = size
