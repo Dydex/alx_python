@@ -1,7 +1,6 @@
-#  create a class 
+"""  create a class """ 
 class Sqaure:
     pass
 
-    #  atrrtibutes
+    """  atrrtibutes """
     __size = 0
-    
