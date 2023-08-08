@@ -3,10 +3,8 @@
 class Sqaure:
     """ A class representing a Square.
     
-    Attributes.
-    
-    size = str.
-    size of the square.
+    Attributes:
+    __size = size of the square.
     """ 
     
     def __init__(self, size):
