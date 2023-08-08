@@ -1,6 +1,13 @@
-""" This is a square(object) module  """
+""" This is a square(object) module.  """
 class Sqaure:
-    """  create a class """ 
+    """ A class representing a square
+    
+    Attributes
+    ----
+    __size = str
+        size of the square
+        
+       """ 
     pass
 
     """  atrrtibutes """
