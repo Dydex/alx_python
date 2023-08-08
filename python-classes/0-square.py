@@ -1,7 +1,8 @@
 """ This is a square(object) module.  """
 
 class Sqaure:
-    """ A class representing a Square.
+    """ 
+    A class representing a Square.
     
     Attributes:
     __size = size of the square.
