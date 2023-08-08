@@ -10,6 +10,6 @@ class Sqaure:
     """ 
     
     def __init__(self, size):
+        """ Initializes the size.
+        """
         self.__size = size
-    """Initializes the size.
-    """
