@@ -32,5 +32,5 @@ class BaseGeometry(metaclass=BaseMetaClass):
             if type(value) is not int:
                 raise TypeError ("name must be an integer")
             if value <= 0:
-                raise ValueError ("age must be geater than 0")
+                raise ValueError ("age must be greater than 0")
                 
