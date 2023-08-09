@@ -52,8 +52,13 @@ class BaseGeometry(BaseGeometry):
              attributes = super().__dir__()
              return [x for x in attributes if x != '__init_subclass__']
 
+class BaseGeometry(BaseGeometry):
+        """
+        This is class BaseGeometry.
+        """
+        
         def __str__(self):
-            return ("[Rectangle] {}/{}".format(self.__width, self.height)) 
+            return "[Rectangle] {}/{}".format(self.__width, self.__height) 
 
         def area(self):
             return self.__width * self.__height
