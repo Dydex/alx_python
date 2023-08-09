@@ -43,30 +43,31 @@ class BaseGeometry(BaseGeometry):
              attributes = super().__dir__()
              return [x for x in attributes if x != '__init_subclass__']
                 
-class BaseGeometry(BaseGeometry):
-        """
-        This is class BaseGeometry.
-        """
+class Rectangle(BaseGeometry):
+    """
+    This is a class Rectangle
+    """
     
-        def __init__(self, width, height):
-            self.__width = super().integer_validator("width", width)
-            self.__height = super().integer_validator("height", height)
+    def __init__(self, width, height):
+        self.__width = super().integer_validator("width", width)
+        self.__height = super().integer_validator("height", height)
 
-        def __dir__(cls) -> None:
+    def __dir__(cls) -> None:
              attributes = super().__dir__()
              return [x for x in attributes if x != '__init_subclass__']
 
-class BaseGeometry(BaseGeometry):
-        """
-        This is class BaseGeometry.
-        """
+class Rectangle(BaseGeometry):
+    """
+    This is a class Rectangle
+    """
 
-        def __str__(self):
-            return "[Rectangle] {}/{}".format(self.__width, self.__height) 
+    def area(self):
+        area = self.__width * self.__height
+        return area
 
-        def area(self):
-            return self.__width * self.__height
-                    
+    def __str__(self):
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+
     
     
     
