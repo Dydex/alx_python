@@ -2,12 +2,12 @@
 This is module for class Basegeometry.
 """
 
-class Basegeometry:
+class BaseGeometry:
     """
-    This is class Basegeometry.
+    This is class BaseGeometry.
     """
     def __init__(self):
-        self.attribute_name = "Basegeometry"
+        self.attribute_name = "BaseGeometry"
 
     
     def __dir__(cls):
@@ -16,6 +16,6 @@ class Basegeometry:
         """
         return [attribute for attribute in super().__dir__() if attribute != "__init_subclass__"]
 
-bg = Basegeometry()  
+bg = BaseGeometry()  
 print(bg)
 print(dir(bg))
