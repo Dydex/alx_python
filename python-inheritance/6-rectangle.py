@@ -39,16 +39,9 @@ class Rectangle(BaseGeometry):
     This is a class Rectangle
     """
     
-class rectangle(Rectangle):
-    """
-    This is a class Rectangle
-    """
     def __init__(self, width, height):
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
         self.__height = height
     
-    def __dir__(cls) -> None:
-        attributes = super().dir__()
-        return [x for x in attributes if x != '__init_subclass__']
