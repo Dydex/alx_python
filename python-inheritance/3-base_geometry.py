@@ -13,5 +13,3 @@ class BaseGeometry:
         """
         return [attribute for attribute in super().__dir__() if attribute != "__init_subclass__"]
 
-bg = BaseGeometry()  
-print(dir(bg))
