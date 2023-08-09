@@ -62,12 +62,14 @@ class Rectangle(BaseGeometry):
     """
 
     def area(self):
-        return self.__width * self.__height
+        return self.width * self.height
 
     def __str__(self):
         return f"[Rectangle] {self.__width}/{self.__height}"
 
-    
+    def __dir__(cls) -> None:
+             attributes = super().__dir__()
+             return [x for x in attributes if x != '__init_subclass__']
     
     
     
