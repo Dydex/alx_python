@@ -6,6 +6,7 @@ class BaseMetaClass(type):
     This is a BaseMetaClass
     """
     
+    
     def __dir__(cls):
         """
         This function removes the __init_subclass (method) from the default method inherited from the parent class
