@@ -6,10 +6,7 @@ class BaseGeometry:
     """
     This is class BaseGeometry.
     """
-    def __init__(self):
-        self.attribute_name = "BaseGeometry"
 
-    
     def __dir__(cls):
         """
         This function removes the __init_subclass (method) from the default method inherited from the parent class
@@ -18,4 +15,3 @@ class BaseGeometry:
 
 bg = BaseGeometry()  
 print(bg)
-print(dir(bg))
