@@ -2,7 +2,9 @@
 This is module for class Basegeometry.
 """
 BaseGeometry = __import__('5-base_geometry').BaseGeometry
-
+"""
+import a file with nmber and put it in variable called Basegeometry
+"""
 
 class Rectangle(BaseGeometry):
     """
