@@ -6,7 +6,9 @@ class Basegeometry:
     """
     This is class Basegeometry.
     """
-    pass
+    def __init__(self):
+        self.attribute_name = "Basegeometry"
+
     
     def __dir__(cls):
         """
@@ -16,4 +18,4 @@ class Basegeometry:
 
 bg = Basegeometry()  
 print(bg)
-# print(dir(bg))
+print(dir(bg))
