@@ -14,5 +14,4 @@ class Basegeometry:
         return [attribute for attribute in super().__dir__() if attribute != "__init_subclass__"]
     
 b = Basegeometry()
-print(b)
 print(dir(b))
