@@ -33,3 +33,5 @@ class BaseGeometry(metaclass=BaseMetaClass):
                 raise TypeError ("must be an integer",format(name))
             if value <= 0:
                 raise ValueError ("name must be geater than 0",format(name))
+            else:
+                return value
