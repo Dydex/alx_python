@@ -28,6 +28,10 @@ class BaseGeometry:
         """
         This is class BaseGeometry.
         """
-        
+
         def area(self):
             raise Exception ("area() is not implemented")
+        
+        def __dir__(cls) -> None:
+             attributes = super().__dir__()
+             return [x for x in attributes if x != '__init_subclass__']

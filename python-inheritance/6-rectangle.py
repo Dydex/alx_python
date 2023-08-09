@@ -38,6 +38,10 @@ class BaseGeometry:
                 raise TypeError (f"{name} must be an integer")
             if value <= 0:
                 raise ValueError (f"{name} must be greater than 0")
+            
+        def __dir__(cls) -> None:
+             attributes = super().__dir__()
+             return [x for x in attributes if x != '__init_subclass__']
                 
 class Rectangle(BaseGeometry):
     """
@@ -49,3 +53,7 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
         self.__width = width
         self.__height = height
+
+    def __dir__(cls) -> None:
+             attributes = super().__dir__()
+             return [x for x in attributes if x != '__init_subclass__']
