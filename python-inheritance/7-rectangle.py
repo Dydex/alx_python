@@ -61,12 +61,13 @@ class Rectangle(BaseGeometry):
     This is a class Rectangle
     """
 
-    def __str__(self):
-        return "[Rectangle] {}/{}".format(self.__width, self.__height)
-
     def area(self):
-        area = self.__width * self.__height
-        print (area)
+        return self.__width * self.__height
+
+    def __str__(self):
+        return f"[Rectangle] {self.__width}/{self.__height}"
+
+    
     
     
     
