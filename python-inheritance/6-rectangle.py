@@ -35,7 +35,10 @@ class BaseGeometry(metaclass=BaseMetaClass):
                 raise ValueError (f"{name} must be greater than 0")
                 
 class Rectangle(BaseGeometry):
-     def __init__(self, width, height):
+    """
+    This is a class Rectangle
+    """
+    def __init__(self, width, height):
           self.__width = width
           self.__height = height
           if type(width, height) is not (int > 0):
