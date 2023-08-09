@@ -43,6 +43,10 @@ class BaseGeometry(BaseGeometry):
              attributes = super().__dir__()
              return [x for x in attributes if x != '__init_subclass__']
                 
+class BaseGeometry(BaseGeometry):
+        """
+        This is class BaseGeometry.
+        """
     
         def __init__(self, width, height):
             self.__width = super().integer_validator("width", width)
@@ -56,7 +60,7 @@ class BaseGeometry(BaseGeometry):
         """
         This is class BaseGeometry.
         """
-        
+
         def __str__(self):
             return "[Rectangle] {}/{}".format(self.__width, self.__height) 
 
