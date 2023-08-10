@@ -40,6 +40,7 @@ class BaseGeometry:
                 raise ValueError (f"{name} must be greater than 0")
 
         def __dir__(cls):
+            
             """
             This function removes the __init_subclass (method) from the default method inherited from the parent class
             """
