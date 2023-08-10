@@ -3,7 +3,11 @@ This is module for class Sqaure.
 """
 
 Rectangle = __import__('7-base_geometry').Rectangle
-    
+
+"""
+This is module for class Sqaure.
+"""
+
 class Square(Rectangle):
     """
     This a class Square.
