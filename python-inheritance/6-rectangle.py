@@ -53,6 +53,10 @@ class Rectangle(BaseGeometry):
             super().integer_validator("height", height)
             self.__width = width
             self.__height = height
+
+        def __dir__(cls) -> None:
+             attributes = super().__dir__()
+             return [x for x in attributes if x != '__init_subclass__']
         
         
     
