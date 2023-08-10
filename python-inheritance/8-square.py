@@ -14,34 +14,34 @@ class BaseMetaClass(type):
         return [attribute for attribute in super().__dir__() if attribute != "__init_subclass__"]
 
 class BaseGeometry(metaclass=BaseMetaClass):
-        """
-        This is class BaseGeometry.
-        """
+    """
+    This is class BaseGeometry.
+    """
         
-        def __dir__(cls):
-            """
-            This function removes the __init_subclass (method) from the default method inherited from the parent class
-            """
-            return [attribute for attribute in super().__dir__() if attribute != "__init_subclass__"]
+    def __dir__(cls):
+        """
+        This function removes the __init_subclass (method) from the default method inherited from the parent class
+        """
+        return [attribute for attribute in super().__dir__() if attribute != "__init_subclass__"]
 
 class BaseGeometry:
-        """
-        This is class BaseGeometry.
-        """
+    """
+    This is class BaseGeometry.
+    """
         
-        def area(self):
-            raise Exception ("area() is not implemented")
+    def area(self):
+        raise Exception ("area() is not implemented")
 
-        def integer_validator(self, name, value):
-            self.name = name
-            if type(value) is not int:
-                raise TypeError (f"{name} must be an integer")
-            if value <= 0:
-                raise ValueError (f"{name} must be greater than 0")
+    def integer_validator(self, name, value):
+        self.name = name
+        if type(value) is not int:
+            raise TypeError (f"{name} must be an integer")
+        if value <= 0:
+            raise ValueError (f"{name} must be greater than 0")
 
-        def __dir__(cls) -> None:
-             attributes = super().__dir__()
-             return [x for x in attributes if x != '__init_subclass__']
+    def __dir__(cls) -> None:
+        attributes = super().__dir__()
+        return [x for x in attributes if x != '__init_subclass__']
                 
 class Rectangle(BaseGeometry):
     """
@@ -67,20 +67,23 @@ class Rectangle(BaseGeometry):
     
     def __dir__(cls):
             
-            """
-            This function removes the __init_subclass (method) from the default method inherited from the parent class
-            """
-            return [attribute for attribute in super().__dir__() if attribute != "__init_subclass__"]
+        """
+        This function removes the __init_subclass (method) from the default method inherited from the parent class
+        """
+        return [attribute for attribute in super().__dir__() if attribute != "__init_subclass__"]
     
 class Square(Rectangle):
     """
     This a class Square.
     """
+
     def __init__(self, size):
-          super().integer_validator("size", size)
-          self.__size = size
+        super().integer_validator("size", size)
+        self.__size = size
 
     def area(self):
         """ returns the area of the object."""
         return self.__size * self.__size
+    
+
     
