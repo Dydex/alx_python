@@ -54,7 +54,5 @@ class Rectangle(BaseGeometry):
             self.__width = width
             self.__height = height
         
-        def __dir__(cls) -> None:
-            attributes = super().__dir__()
-            return [x for x in attributes if x != '__init_subclass__']
+        
     
