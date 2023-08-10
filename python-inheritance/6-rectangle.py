@@ -18,3 +18,4 @@ class Rectangle(BaseGeometry):
     def __dir__(cls) -> None:
              attributes = super().__dir__()
              return [x for x in attributes if x != '__init_subclass__']
+    
