@@ -10,16 +10,17 @@ class Rectangle(BaseGeometry):
     """
     
     def __init__(self, width, height):
+        """
+        This is an integer validator method
+        """
         super().integer_validator("width", width)
         super().integer_validator("height", height)
         self.__width = width
         self.__height = height
 
-    def __dir__(self):
-        attributes = super().__dir__()
-        new_attribute_list = [
-            item for item in attributes if item != "__init_subclass__"]
-        return new_attribute_list
+    def __dir__(cls) -> None:
+             attributes = super() .__dir__()
+             return [x for x in attributes if x != '__init_subclass__']
         
         
     
