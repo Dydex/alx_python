@@ -72,9 +72,9 @@ class Rectangle(BaseGeometry):
             """
             return [attribute for attribute in super().__dir__() if attribute != "__init_subclass__"]
     
-class square(Rectangle):
+class Square(Rectangle):
     """
-    This a class Square
+    This a class Square.
     """
     def __init__(self, size):
           super().integer_validator("size", size)
