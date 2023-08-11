@@ -8,7 +8,7 @@ This imports the class base
 """
 
 
-class Recangle(Base):
+class Rectangle(Base):
     """
     This is class Rectangle
     """
