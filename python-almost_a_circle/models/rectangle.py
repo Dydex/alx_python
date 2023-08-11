@@ -127,6 +127,3 @@ class Rectangle(Base):
         This is an area method
         """
         return self.__height * self.__width
-    
-    def display(self):
-        
