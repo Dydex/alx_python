@@ -23,18 +23,14 @@ class Square(Rectangle):
     @property
     def size(self):
         """
-        getter method for width.
+        getter method for size.
         """
-        return self.size
+        return self.width
 
     @size.setter
     def size(self, value):
         """
-        setter method for width.
+        setter method for size.
         """
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        elif value <= 0:
-            raise ValueError("width must be > 0")
-
-        self.size = value
+    
+        self.width = value
