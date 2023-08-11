@@ -127,3 +127,17 @@ class Rectangle(Base):
         This is an area method
         """
         return self.__height * self.__width
+
+    def display(self):
+        """
+        This is a display method.
+        """
+        for row in range(self.__height):
+            for column in range(self.__width):
+                print("#", end="")
+            else:
+                print()
+
+    def __str__(self):
+        """ str magic method"""
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
