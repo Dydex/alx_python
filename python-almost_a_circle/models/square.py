@@ -14,7 +14,7 @@ class Square(Rectangle):
         """
         This is the initialization method
         """
-        super().__init__(size, size, x, y, id=None)
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """ str magic method"""
