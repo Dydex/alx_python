@@ -3,6 +3,9 @@ This is a module for class Base
 """
 
 Base = __import__("base.py").Base
+"""
+This imports the class base
+"""
 
 
 class Recangle(Base):
@@ -11,6 +14,9 @@ class Recangle(Base):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        This is the initialization method
+        """
         self.__width = width
         self.__height = height
         self.__x = x
