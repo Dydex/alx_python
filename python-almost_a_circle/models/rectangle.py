@@ -148,13 +148,3 @@ class Rectangle(Base):
         """ str magic method"""
         return "[Rectangle] ({id}) {x}/{y} - {width}/{height}".format(self.id,
                                                                       self.x, self.y, self.width, self.height)
-
-    def display(self):
-        """
-        This is a display method.
-        """
-        
-            
-                print("#", end="")
-            else:
-                print()
