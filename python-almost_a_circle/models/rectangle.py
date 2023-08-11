@@ -2,7 +2,7 @@
 This is a module for class Base
 """
 
-from base import Base
+from models.base import Base
 """
 This imports the class base
 """
