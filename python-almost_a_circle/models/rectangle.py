@@ -132,12 +132,29 @@ class Rectangle(Base):
         """
         This is a display method.
         """
-        for row in range(self.__height):
-            for column in range(self.__width):
-                print("#", end="")
-            else:
-                print()
+        for row in range(self.y):
+            print()
+        else:
+            for row in range(self.height):
+                for column in range(self.x):
+                    print(" ", end="")
+                else:
+                    for column in range(self.width):
+                        print("#", end="")
+                    else:
+                        print()
 
     def __str__(self):
         """ str magic method"""
-        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+        return "[Rectangle] ({id}) {x}/{y} - {width}/{height}".format(self.id,
+                                                                      self.x, self.y, self.width, self.height)
+
+    def display(self):
+        """
+        This is a display method.
+        """
+        
+            
+                print("#", end="")
+            else:
+                print()
