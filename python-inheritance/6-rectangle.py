@@ -18,10 +18,7 @@ class Rectangle(BaseGeometry):
         self.__width = width
         self.__height = height
 
-    def __dir__(self):
-
-        
-            
+    def __dir__(cls):
             """
             This function removes the __init_subclass (method) from the default method inherited from the parent class
             """
