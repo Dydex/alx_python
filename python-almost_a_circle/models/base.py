@@ -1,6 +1,8 @@
 """
 This is a modlue for class Base
 """
+
+
 class Base:
     """
     This is a class Base
@@ -15,6 +17,4 @@ class Base:
             self.id = id
         else:
             Base.__nb_objects += 1
-            self.id = Base.__nb_objects  
-            
-
+            self.id = Base.__nb_objects
