@@ -2,7 +2,7 @@
 This is a module for class Base
 """
 
-Base = __import__("base.py").Base
+from base import Base
 """
 This imports the class base
 """
