@@ -1,10 +1,6 @@
-"""
-This is an import requests module
-"""
+"""This is an import requests module"""
 import requests
-"""
-This is an import requests module
-"""
+"""This is an import requests module"""
 
 if __name__ == "__main__":
 
