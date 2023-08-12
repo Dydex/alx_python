@@ -1,3 +1,17 @@
+"""
+This is an import requests module
+"""
 import requests
-req = requests.get("https://alu-intranet.htbn.io.status")
-print(req)
+
+if __name__ == "__main__":
+
+    url = "https://alu-intranet.htbn.io.status"
+response = requests.get(url)
+
+if response.status_code == 200:
+    data = response.json()
+    print("Body response:")
+    print("\t- type: {}".format(type(data)))
+    print("\t- content: {}".format(data))
+else:
+    print("Failed to fetch data. Status code: {}".format(response.status_code))
