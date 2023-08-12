@@ -2,7 +2,6 @@
 import requests
 """This is an import requests module"""
 
-if __name__ == "__main__":
 
     url = "https://alu-intranet.htbn.io.status"
 response = requests.get(url)
