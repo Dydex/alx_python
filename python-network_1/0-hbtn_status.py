@@ -1,9 +1,7 @@
-"""This is an import requests module"""
+"""Module that fetches https://alu-intranet.htbn.io.status"""
 import requests
-"""This is an import requests module"""
 
-
-    url = "https://alu-intranet.htbn.io.status"
+url = "https://alu-intranet.htbn.io.status"
 response = requests.get(url)
 
 if response.status_code == 200:
