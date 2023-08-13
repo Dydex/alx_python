@@ -1,4 +1,4 @@
-"""Module that fetches."""
+"Module that fetches."
 import requests
 
 url = "https://alu-intranet.htbn.io.status"
