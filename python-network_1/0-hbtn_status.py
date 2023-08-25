@@ -2,9 +2,7 @@
 This a Module that fetches the URL using requests package
 """
 import requests
-
-url = "https://alu-intranet.htbn.io.status"
-response = requests.get(url)
+response = requests.get("https://alu-intranet.htbn.io.status")
 
 print("Body response:")
 print("\t- type: {}".format(type(response.text)))
