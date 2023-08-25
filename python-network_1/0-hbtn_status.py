@@ -5,7 +5,7 @@ import requests
 This imports the requests method
 """
 if __name__ == "__main__":
-    response = requests.get("https://alu-intranet.htbn.io.status")
+    response = requests.get("https://alu-intranet.hbtn.io.status")
     """
     saves the requests in a variable
     """
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     """
     prints type of response text
     """
-    print("\t- content:", (response.text))
+    print("\t- content:", response.text)
     """
     prints content of response text
     """
