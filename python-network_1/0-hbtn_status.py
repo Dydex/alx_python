@@ -5,7 +5,7 @@ import requests
 This imports the requests method
 """
 if __name__ == "__main__":
-    response = requests.get("https://alu-intranet.hbtn.io.status")
+    response = requests.get("https://alu-intranet.hbtn.io/status")
     """
     saves the requests in a variable
     """
