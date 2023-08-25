@@ -1,5 +1,5 @@
 """
-Module that fetches
+This a Module that fetches the URL using requests package
 """
 import requests
 
