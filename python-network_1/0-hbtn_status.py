@@ -1,4 +1,4 @@
-"""Module that fetches.
+"""pulling requests from URL
 """
 import requests
 
