@@ -13,11 +13,11 @@ if __name__ == "__main__":
     """
     prints body response
     """
-    print("\t- type: {}".format(type(response.text)))
+    print("\t- type:", type(response.text))
     """
     prints type of response text
     """
-    print("\t- content: {}".format(response.text))
+    print("\t- content:", (response.text))
     """
     prints content of response text
     """
