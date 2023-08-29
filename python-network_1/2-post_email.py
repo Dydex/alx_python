@@ -11,7 +11,6 @@ def send_post_request(url, email):
         data = {'email': email}
         response = requests.post(url, data=data)
         if response.status_code == 200:
-            print('Response Body:')
             print(response.text)
         else:
             print(f'Request failed with status code: {response.status_code}')
