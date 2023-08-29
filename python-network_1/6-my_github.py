@@ -19,7 +19,7 @@ def get_github_user_id(username, token):
         if response.status_code == 200:
             user_data = response.json()
             user_id = user_data.get('id')
-            print(f'GitHub User ID: {user_id}')
+            print(f'{user_id}')
         else:
             print(
                 f'Error: Unable to fetch user data. Status code: {response.status_code}')
