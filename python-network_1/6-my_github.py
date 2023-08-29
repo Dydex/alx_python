@@ -9,7 +9,7 @@ import sys
 
 def get_github_user_id(username, token):
     try:
-        url = f'https://api.github.com/Dydex'
+        url = f'https://api.github.com/user'
         headers = {
             'Authorization': f'Basic {username}:{token}',
         }
