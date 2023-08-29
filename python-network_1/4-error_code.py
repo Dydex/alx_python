@@ -9,7 +9,7 @@ import sys
 def send_request_and_display_response(url):
     try:
         response = requests.get(url)
-        print(f'Response Body:\n{response.text}')
+        print(f'{response.text}')
 
         if response.status_code >= 400:
             print(f'Error code: {response.status_code}')
