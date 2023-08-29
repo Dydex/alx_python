@@ -22,6 +22,7 @@ if __name__ == "__main__":
         except requests.exceptions.RequestException as e:
             print(f'An error occurred: {e}')
 
+if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python script.py <URL>")
     else:
