@@ -11,7 +11,7 @@ def get_github_user_id(username, token):
     try:
         url = f'https://api.github.com/user'
         headers = {
-            'Authorization': f'Basic {username}:{token}',
+            'Authorization': f'token {token}',
         }
 
         response = requests.get(url, headers=headers)
