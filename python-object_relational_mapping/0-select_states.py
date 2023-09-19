@@ -21,9 +21,9 @@ if __name__ == '__main__':
         database = MySQLdb.connect(
             host='localhost',
             port=3306,
-            user='root',
-            passwd='Dydex1590$',
-            db='hbtn_0e_0_usa'
+            user=mysql_username,
+            passwd=mysql_password,
+            db=database_name
         )
 
 # Create a cursor object
