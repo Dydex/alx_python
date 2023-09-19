@@ -32,8 +32,8 @@ if __name__ == '__main__':
         cursor = database.cursor()
 
 # Execute the SQL query
-        query = "SELECT * FROM states WHERE name LIKE '{}' ORDER BY id".format(
-            state_name)
+        query = 'SELECT * FROM states WHERE UPPER(name)'
+        "= UPPER('{}')  ORDER BY id".format(state_name)
 
         cursor.execute(query)
 
