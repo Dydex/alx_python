@@ -30,9 +30,7 @@ if __name__ == '__main__':
         cursor = database.cursor()
 
 # Execute the SQL query
-        cursor.execute(
-            "SELECT * FROM states WHERE name LIKE 'N%' OR name = 'New York'"
-        )
+        cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
 
 # Fetch all the rows
         states = cursor.fetchall()
