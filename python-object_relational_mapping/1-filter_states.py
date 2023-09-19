@@ -31,7 +31,7 @@ if __name__ == '__main__':
 
 # Execute the SQL query
         cursor.execute(
-            "SELECT * FROM states WHERE name LIKE 'n%' ORDER BY id")
+            "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
 
 # Fetch all the rows
         states = cursor.fetchall()
