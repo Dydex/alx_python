@@ -2,10 +2,20 @@
 This is module help list all states from the database
 """
 import MySQLdb
+import sys
 
 if __name__ == '__main__':
 
-    # Connect to the MySQL server
+    # checks if length of arguments is not equal to 4
+    if len(sys.argv) != 4:
+        print(
+            'Pls use: 0-select_states.py <mysql_username> <mysql_password> <database_name>')
+
+    mysql_username = sys.argv[1]
+    mysql_password = sys.argv[2]
+    database_name = sys.argv[3]
+
+else:
     database = MySQLdb.connect(
         host='localhost',
         port=3306,
@@ -15,18 +25,22 @@ if __name__ == '__main__':
     )
 
 # Create a cursor object
-cursor = database.cursor()
+    cursor = database.cursor()
 
 # Execute the SQL query
-cursor.execute('SELECT * FROM states ORDER BY id ASC')
+    cursor.execute('SELECT * FROM states ORDER BY id ASC')
 
 # Fetch all the rows
-states = cursor.fetchall()
+    states = cursor.fetchall()
 
 # Display the results
-for state in states:
-    print(state)
+    for state in states:
+        print(state)
 
 # Close the cursor and database connection
-cursor.close()
-database.close()
+        cursor.close()
+        database.close()
+
+    # except MySQLdb.Error as e:
+    #     print('MySQL Error:', e)
+    #     sys.exit(1)
