@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
 # Execute the SQL query
         query = 'SELECT * FROM states WHERE UPPER(name)'
-        "= UPPER('{}')  ORDER BY id".format(state_name)
+        "= UPPER('{}')  ORDER BY id".format(state_name,)
 
         cursor.execute(query)
 
