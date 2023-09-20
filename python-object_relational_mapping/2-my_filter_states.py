@@ -31,8 +31,8 @@ if __name__ == '__main__':
         cursor = database.cursor()
 
 # Execute the SQL query
-        query = ("SELECT * FROM states WHERE name LIKE %s"
-                 "COLLATE utf8mb4_bin ORDER BY states.id")
+        query = (
+            "SELECT * FROM states WHERE BINARY name LIKE 'N%' ORDER BY id")
 
         cursor.execute(query, (state_name,))
 
