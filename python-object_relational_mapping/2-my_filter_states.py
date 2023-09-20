@@ -8,9 +8,8 @@ if __name__ == '__main__':
 
     # checks if length of arguments is not equal to 5
     if len(sys.argv) != 5:
-        print('Pls use: 0-select_states.py'
-              ' <mysql_username> <mysql_password> <database_name>'
-              ' <state_name>')
+        print('Pls use: {} <mysql_username> <mysql_password> <database_name>'
+              .format(sys.argv[0]), ' <state_name>')
 
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
@@ -32,10 +31,10 @@ if __name__ == '__main__':
         cursor = database.cursor()
 
 # Execute the SQL query
-        query = 'SELECT * FROM states WHERE UPPER(name)'
-        "= UPPER('{}')  ORDER BY id".format(state_name,)
+        query = "SELECT * FROM states WHERE name LIKE %s"
+        "COLLATE utf8mb4_bin ORDER BY states.id"
 
-        cursor.execute(query)
+        cursor.execute(query, (state_name,))
 
 # Fetch all the rows
         states = cursor.fetchall()
