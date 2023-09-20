@@ -31,7 +31,8 @@ if __name__ == '__main__':
         cursor = database.cursor()
 
 # Execute the SQL query
-        query = "SELECT * FROM states WHERE BINARY name LIKE 'N%' ORDER BY id"
+        query = ("SELECT * FROM states WHERE name LIKE %s"
+                 "COLLATE utf8mb4_bin ORDER BY states.id")
 
         cursor.execute(query, (state_name,))
 
@@ -39,8 +40,8 @@ if __name__ == '__main__':
         states = cursor.fetchall()
 
 # Display the results
-        for row in states:
-            print(row)
+        for state in states:
+            print(state)
 
 # Close the cursor and database connection
         cursor.close()
@@ -48,3 +49,4 @@ if __name__ == '__main__':
 
     except MySQLdb.Error as e:
         print('MySQL Error:', e)
+        sys.exit(1)
