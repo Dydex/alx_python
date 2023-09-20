@@ -1,6 +1,5 @@
 """
-This is module help list all cities of the state 
-inserted by the checker from the database
+This module lists all cities of the state from the database
 """
 import MySQLdb
 import sys
