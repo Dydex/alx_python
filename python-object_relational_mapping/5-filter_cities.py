@@ -1,22 +1,21 @@
 """
-This is module filters states starting with N by 
-using %s to avoid injection from the database
+This is module help list all cities of the state 
+inserted by the checker from the database
 """
 import MySQLdb
 import sys
 
 if __name__ == '__main__':
 
-    # checks if length of arguments is not equal to 5
+    # checks if length of arguments is not equal to 4
     if len(sys.argv) != 5:
-        print('Pls use: {} <mysql_username> <mysql_password> <database_name>'
-              .format(sys.argv[0]), ' <state_name>')
+        print('Pls use: 4-cities_by_state.py'
+              ' <mysql_username> <mysql_password> <database_name>')
 
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
     state_name = sys.argv[4]
-
     try:
 
         # Connect to the MySQL server
@@ -32,17 +31,17 @@ if __name__ == '__main__':
         cursor = database.cursor()
 
 # Execute the SQL query
-        query = ("SELECT * FROM states WHERE name LIKE %s"
-                 "COLLATE utf8mb4_bin ORDER BY states.id")
-
-        cursor.execute(query, (state_name,))
+        cursor.execute("""SELECT cities.id, cities.name, states.name
+        FROM cities JOIN states ON cities.state_id = states.id
+        WHERE states.name = %s
+        ORDER BY cities.id""")
 
 # Fetch all the rows
-        states = cursor.fetchall()
+        cities = cursor.fetchall()
 
 # Display the results
-        for state in states:
-            print(state)
+        for city in cities:
+            print(city)
 
 # Close the cursor and database connection
         cursor.close()
@@ -50,4 +49,3 @@ if __name__ == '__main__':
 
     except MySQLdb.Error as e:
         print('MySQL Error:', e)
-        sys.exit(1)
