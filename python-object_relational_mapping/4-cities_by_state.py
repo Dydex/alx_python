@@ -8,8 +8,8 @@ if __name__ == '__main__':
 
     # checks if length of arguments is not equal to 4
     if len(sys.argv) != 4:
-        print(
-            'Pls use: 4-cities_by_state.py <mysql_username> <mysql_password> <database_name>')
+        print('Pls use: 4-cities_by_state.py'
+              ' <mysql_username> <mysql_password> <database_name>')
 
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
@@ -30,7 +30,7 @@ if __name__ == '__main__':
         cursor = database.cursor()
 
 # Execute the SQL query
-        cursor.execute('SELECT * FROM cities ORDER BY cities.id')
+        cursor.execute('SELECT * FROM cities ORDER BY id')
 
 # Fetch all the rows
         cities = cursor.fetchall()
