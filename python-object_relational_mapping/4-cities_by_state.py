@@ -30,7 +30,9 @@ if __name__ == '__main__':
         cursor = database.cursor()
 
 # Execute the SQL query
-        cursor.execute('SELECT * FROM cities ORDER BY id')
+        cursor.execute("""SELECT cities.id, cities.name, states.name
+        FROM cities JOIN states ON cities.state.id = states.id
+        ORDER BY cities.id""")
 
 # Fetch all the rows
         cities = cursor.fetchall()
