@@ -1,6 +1,5 @@
 """
-This is module filters states starting with N by 
-using %s to avoid injection from the database
+This is module filters states starting with N from the database
 """
 import MySQLdb
 import sys
