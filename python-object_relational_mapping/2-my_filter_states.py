@@ -40,8 +40,8 @@ if __name__ == '__main__':
         states = cursor.fetchall()
 
 # Display the results
-        for state in states:
-            print(state)
+        for row in states:
+            print(row)
 
 # Close the cursor and database connection
         cursor.close()
