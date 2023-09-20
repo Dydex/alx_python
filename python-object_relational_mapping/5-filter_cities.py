@@ -7,10 +7,10 @@ import sys
 
 if __name__ == '__main__':
 
-    # checks if length of arguments is not equal to 4
+    # checks if length of arguments is not equal to 5
     if len(sys.argv) != 5:
-        print('Pls use: {} <mysql_username> <mysql_password> <database_name>'
-              .format(sys.argv[0]), ' <state_name>')
+        print('Pls use: {} <mysql_username> <mysql_password>'
+              '<database_name> <state_name>'.format(sys.argv[0]))
 
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
@@ -31,13 +31,10 @@ if __name__ == '__main__':
         cursor = database.cursor()
 
 # Execute the SQL query
-        query = """
-                SELECT cities.name,
-                FROM cities 
-                JOIN states ON cities.state_id = states.id
-                WHERE states.name = %s
-                ORDER BY cities.id
-        """
+        query = """SELECT cities.name
+        FROM cities JOIN states ON cities.state_id = states.id
+        WHERE states.name = %s
+        ORDER BY cities.id"""
 
         cursor.execute(query, (state_name,))
 
@@ -45,8 +42,8 @@ if __name__ == '__main__':
         cities = cursor.fetchall()
 
 # Display the results
-        city = [row[0] for row in cities]
-        print(", ".join(city))
+        city_names = [row[0] for row in cities]
+        print(", ".join(city_names))
 
 # Close the cursor and database connection
         cursor.close()
@@ -54,3 +51,4 @@ if __name__ == '__main__':
 
     except MySQLdb.Error as e:
         print('MySQL Error:', e)
+        sys.exit(1)
