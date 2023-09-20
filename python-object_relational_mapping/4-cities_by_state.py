@@ -31,7 +31,7 @@ if __name__ == '__main__':
 
 # Execute the SQL query
         cursor.execute("""SELECT cities.id, cities.name, states.name
-        FROM cities JOIN states ON cities.state.id = states.id
+        FROM cities JOIN states ON cities.state_id = states.id
         ORDER BY cities.id""")
 
 # Fetch all the rows
