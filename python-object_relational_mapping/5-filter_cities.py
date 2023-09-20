@@ -9,8 +9,8 @@ if __name__ == '__main__':
 
     # checks if length of arguments is not equal to 4
     if len(sys.argv) != 5:
-        print('Pls use: 4-cities_by_state.py'
-              ' <mysql_username> <mysql_password> <database_name>')
+        print('Pls use: {} <mysql_username> <mysql_password> <database_name>'
+              .format(sys.argv[0]), ' <state_name>')
 
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
@@ -31,17 +31,22 @@ if __name__ == '__main__':
         cursor = database.cursor()
 
 # Execute the SQL query
-        cursor.execute("""SELECT cities.id, cities.name,
-        FROM cities JOIN states ON cities.state_id = states.id
-        AND states.name = %s
-        ORDER BY cities.id""")
+        query = """
+                SELECT cities.name,
+                FROM cities 
+                JOIN states ON cities.state_id = states.id
+                WHERE states.name = %s
+                ORDER BY cities.id
+        """
+
+        cursor.execute(query, (state_name,))
 
 # Fetch all the rows
         cities = cursor.fetchall()
 
 # Display the results
-        for city in cities:
-            print(city)
+        city = [row[0] for row in cities]
+        print(", ".join(city))
 
 # Close the cursor and database connection
         cursor.close()
