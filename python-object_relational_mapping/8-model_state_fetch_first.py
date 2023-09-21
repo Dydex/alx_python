@@ -26,8 +26,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    """Query and print the first State object by 
-    ordering by states.id and limiting to 1 result """
+    # Query and print the first State object by
+    # ordering by states.id and limiting to 1 result
     state = session.query(State).order_by(State.id).first()
 
     if state is None:
