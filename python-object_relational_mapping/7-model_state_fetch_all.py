@@ -12,13 +12,13 @@ if __name__ == "__main__":
                   sys.argv[0]))
         sys.exit(1)
 
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
+    mysql_uname = sys.argv[1]
+    mysql_pwd = sys.argv[2]
     db_name = sys.argv[3]
 
     # Create a database connection
     engine = create_engine(
-        f'mysql+mysqldb://{mysql_username}:{mysql_password}@localhost:3306/{db_name}',
+        f'mysql+mysqldb://{mysql_uname}:{mysql_pwd}@localhost:3306/{db_name}',
         pool_pre_ping=True
     )
 
