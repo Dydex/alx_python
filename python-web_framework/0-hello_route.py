@@ -1,3 +1,6 @@
+"""
+This a module that uses flask as it webframework
+"""
 from flask import Flask
 app = Flask(__name__)
 
