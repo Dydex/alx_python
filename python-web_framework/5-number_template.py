@@ -54,7 +54,7 @@ def is_number(n):
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def number_template(n):
     if isinstance(n, int):
-        return render_template('number.html', n=n)
+        return render_template('5-number.html', n=n)
     else:
         return "", 404
 
