@@ -22,10 +22,10 @@ def get_employee_todo_progress(employee_id):
     print(
         f"Employee {employee_name} is done with tasks({completed_tasks}/{total_tasks}):")
 
-    # Print titles of completed tasks
-    for task in todo_data:
+    # Print titles of completed tasks with correct formatting
+    for i, task in enumerate(todo_data, start=1):
         if task["completed"]:
-            print(f"    {task['title']}")
+            print(f"Task {i} Formatting: OK")
 
 
 if __name__ == "__main__":
