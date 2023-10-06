@@ -1,14 +1,14 @@
 import requests
+import sys
 
 
 def get_employee_todo_progress(employee_id):
-    # Define the base URL for the API
     base_url = "https://jsonplaceholder.typicode.com"
 
     # Fetch employee details
     employee_response = requests.get(f"{base_url}/users/{employee_id}")
     employee_data = employee_response.json()
-    employee_name = employee_data["name"][:18]
+    employee_name = employee_data["name"]
 
     # Fetch TODO list for the employee
     todo_response = requests.get(f"{base_url}/users/{employee_id}/todos")
@@ -20,18 +20,21 @@ def get_employee_todo_progress(employee_id):
 
     # Print the progress information
     print(
-        f"Employee {employee_name:<18} is done with tasks ({completed_tasks}/{total_tasks}):")
+        f"Employee {employee_name} is done with tasks({completed_tasks}/{total_tasks}):")
 
     # Print titles of completed tasks
-    for i, task in enumerate(todo_data):
+    for task in todo_data:
         if task["completed"]:
-            print(f"\tTask {i + 1} in output: OK")
+            print(f"    {task['title']}")
 
 
 if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python script.py <employee_id>")
+        sys.exit(1)
+
     try:
-        # Accept an integer as a parameter (employee ID)
-        employee_id = int(input("Enter an employee ID: "))
+        employee_id = int(sys.argv[1])
         get_employee_todo_progress(employee_id)
     except ValueError:
         print("Invalid input. Please enter an integer employee ID.")
