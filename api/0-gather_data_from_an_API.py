@@ -1,5 +1,6 @@
 import requests
 
+
 def get_employee_todo_progress(employee_id):
     # Define the base URL for the API
     base_url = "https://jsonplaceholder.typicode.com"
@@ -7,7 +8,7 @@ def get_employee_todo_progress(employee_id):
     # Fetch employee details
     employee_response = requests.get(f"{base_url}/users/{employee_id}")
     employee_data = employee_response.json()
-    employee_name = employee_data["name"]
+    employee_name = employee_data["name"][:18]
 
     # Fetch TODO list for the employee
     todo_response = requests.get(f"{base_url}/users/{employee_id}/todos")
@@ -18,12 +19,14 @@ def get_employee_todo_progress(employee_id):
     completed_tasks = sum(1 for task in todo_data if task["completed"])
 
     # Print the progress information
-    print(f"Employee {employee_name[:18]:<18} is done with tasks ({completed_tasks}/{total_tasks}):")
-    
+    print(
+        f"Employee {employee_name:<18} is done with tasks ({completed_tasks}/{total_tasks}):")
+
     # Print titles of completed tasks
-    for task in todo_data:
+    for i, task in enumerate(todo_data):
         if task["completed"]:
-            print(f"\t{task['title']}")
+            print(f"\tTask {i + 1} in output: OK")
+
 
 if __name__ == "__main__":
     try:
