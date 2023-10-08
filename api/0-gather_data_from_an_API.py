@@ -25,7 +25,7 @@ def get_employee_todo_progress(employee_id):
     # Print titles of completed tasks
     for task in todo_data:
         if task["completed"]:
-            print(f"{\task['title']}")
+            print(f"{\t task['title']}")
 
 
 if __name__ == "__main__":
