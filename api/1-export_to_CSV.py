@@ -3,7 +3,7 @@ import json
 import requests
 import sys
 
-if name == "main":
+if __name__ == "main":
     employee_id = sys.argv[1]
     api_request = requests.get(
         "https://jsonplaceholder.typicode.com/users/%7B%7D".format(employee_id))
