@@ -1,30 +1,41 @@
-"""
-"""
 import csv
-import json
 import requests
 import sys
 
+if len(sys.argv) != 2:
+    print("Usage: python3 0-gather_data_from_an_API.py <employee_id>")
+    sys.exit(1)
 
 employee_id = sys.argv[1]
-api_request = requests.get(
-    "https://jsonplaceholder.typicode.com/users/%7B%7D".format(employee_id))
-api_request1 = requests.get(
-    "https://jsonplaceholder.typicode.com/users/%7B%7D/todos".format(employee_id))
-data = api_request.text
-pjson = json.loads(data)
-data1 = api_request1.text
-pjson1 = json.loads(data1)
+url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
+response = requests.get(url)
+employee_name = response.json().get("username")
 
+if not employee_name:
+    print(f"No employee found with ID {employee_id}")
+    sys.exit(1)
 
-# export data to csv data
-filename = "{}.csv".format(employee_id)
-with open(filename, 'w', newline='') as csvfile:
-    writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
-    for item in pjson1:
-        user_id = employee_id
-        username = pjson['username']
-        task_completed_status = item['completed']
-        task_title = item['title']
-        writer.writerow(
-            [user_id, username, task_completed_status, task_title])
+url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
+response = requests.get(url)
+todos = response.json()
+
+total_tasks = len(todos)
+done_tasks = sum(1 for todo in todos if todo.get("completed"))
+
+print(
+    f"Employee {employee_name} is done with tasks({done_tasks}/{total_tasks}):")
+for todo in todos:
+    if todo.get("completed"):
+        print(f"\t {todo.get('title')}")
+
+# Export to CSV
+csv_filename = f'{employee_id}.csv'
+with open(csv_filename, 'w', newline='') as csvfile:
+    csv_writer = csv.writer(csvfile, delimiter=',',
+                            quotechar='"', quoting=csv.QUOTE_ALL)
+    # Write tasks
+    for todo in todos:
+        csv_writer.writerow([todo.get('"'), employee_id, employee_name,
+                             todo.get("completed"), todo.get("title"), todo.get('"')])
+
+print(f"Data exported to {csv_filename}")
